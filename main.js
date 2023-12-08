@@ -2,15 +2,15 @@ function calcularCotizacion(ancho, largo, tela) {
     let precioBase = 5000;
     let precio;
 
-    //Descuento aplicable para cortinas que tengan menos de 150cm de ancho
+   // 35% de descuento si es menor o igual a 150cm    
     if (ancho <= 150) {
-        precio = precioBase - 1700;
+       precio = precioBase - 1750; 
     } else {
         precio = precioBase;
-        }
+    }     
 
-      //Precio segun el tipo de tela 
-    switch (tela) {
+   //Precio segun el tipo de tela 
+    switch (tela.toLowerCase()) {
         case 'screen':
             precio += 15000;
             break;
@@ -31,6 +31,7 @@ function calcularCotizacion(ancho, largo, tela) {
     return precio;
 }
 
+
 alert('Bienvenido Usuari@, cotizamos tu cortina roller en 3 simples pasos!');
 alert('Tenga en cuenta que hay un DESCUENTO del 35% en cortinas de menos de 150cm de ancho!');
 
@@ -46,18 +47,4 @@ if (ancho < 50){
     alert('Por favor, ingrese una medida valida')
 } else {
     alert(`La cotización para ${nombre} es: $${cotizacion}. ¡Gracias por utilizar nuestros servicios!`);
-}
-
-if (tela != "Screen" && tela != "Lino" && tela != "Blackout" || tela != "screen" && tela != "blackout" && tela != "lino"){
-    alert("Tela no valida, presupuesto invalido");
-}
-
-if (largo <= 120) {
-    precio = calcularCotizacion + 1400;
-} else if (largo <= 190) {
-    precio = calcularCotizacion + 2000;
-} else if (largo <= 250) {
-    precio = calcularCotizacion + 3500;
-} else {
-    alert("medida no valida");
 }
