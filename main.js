@@ -1,10 +1,11 @@
-function calcularCotizacion(ancho, largo, tela) {
+function calcularCotizacion(ancho, largo, tela) {  //Funcion
     let precioBase = 5000;
     let precio;
 
-   // 35% de descuento si es menor o igual a 150cm    
-    if (ancho <= 150) {
-       precio = precioBase - 1750; 
+   // 35% de descuento si es menor o igual a 150cm
+
+    if (ancho <= 150) {  //Condicional
+       precio = precioBase - 1750;
     } else {
         precio = precioBase;
     }  
@@ -22,6 +23,7 @@ function calcularCotizacion(ancho, largo, tela) {
     }
 
    //Precio segun el tipo de tela 
+
     switch (tela.toLowerCase()) {
         case 'screen':
             precio += 15000;
@@ -47,7 +49,7 @@ function calcularCotizacion(ancho, largo, tela) {
 alert('Bienvenido Usuari@, cotizamos tu cortina roller en 3 simples pasos!');
 alert('Tenga en cuenta que hay un DESCUENTO del 35% en cortinas de menos de 150cm de ancho!');
 
-// Prompts para interacturar con la informacion
+// Prompts para ingresar la informacion con la que interactua el cotizador.
 let nombre = prompt('Ingrese su Nombre');
 let ancho = parseInt(prompt('Ingrese el ancho de la cortina (en centimetros)'));
 let largo = parseInt(prompt('Ingrese el largo de la cortina (en centimetros)'));
@@ -57,8 +59,11 @@ let cotizacion = calcularCotizacion(ancho, largo, tela,);
 console.log(`Cotizacion para ${nombre}, medidas de la cortina (ancho: ${ancho}cm x ${largo}cm) en tela ${tela} valor total= ${cotizacion}`);
 
 do {
-    console.log(`Se ha aplicado el descuento del 35% correctamente al pedido de ${nombre}`);
-} while (ancho >= 150);
+    if (ancho <= 150) {
+        console.log(`Se ha aplicado el descuento del 35% correctamente al pedido de ${nombre}`);
+
+    }
+} while (false);
 
 
 if (ancho < 50){
