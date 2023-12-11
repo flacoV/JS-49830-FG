@@ -58,10 +58,9 @@ let cotizacion = calcularCotizacion(ancho, largo, tela,);
 
 console.log(`Cotizacion para ${nombre}, medidas de la cortina (ancho: ${ancho}cm x ${largo}cm) en tela ${tela} valor total= ${cotizacion}`);
 
-do {
+do {  // Ciclo
     if (ancho <= 150) {
         console.log(`Se ha aplicado el descuento del 35% correctamente al pedido de ${nombre}`);
-
     }
 } while (false);
 
